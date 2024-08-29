@@ -7,5 +7,5 @@ import java.util.List;
 public interface EventService {
     Integer getEventSize();
     List<Event> getEvents(Integer pageSize, Integer page);
-    Event getEventById(Integer id);
+    Event getEventById(Long id);
 }
