@@ -1,17 +1,24 @@
 package se331.lab.rest.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import se331.lab.entity.Event;
+import org.springframework.web.bind.annotation.GetMapping;
+import se331.lab.rest.entity.Event;
 
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Controller
 public class EventController {
 
     List<Event> eventList;
 
+    @GetMapping("events")
+    public ResponseEntity<?> getEventLists(){
+        return ResponseEntity.ok(eventList);
+    }
     @PostConstruct
     public void init() {
         eventList = new ArrayList<>();
@@ -24,7 +31,7 @@ public class EventController {
                 .location("Meow Town")
                 .date("January 28, 2022")
                 .time("12:00")
-                .petsAllowed(true)
+                .petAllowed(true)
                 .organizer("Kat Laydee")
                 .build());
 
@@ -36,7 +43,7 @@ public class EventController {
                 .location("Flora City")
                 .date("March 14, 2022")
                 .time("10:00")
-                .petsAllowed(true)
+                .petAllowed(true)
                 .organizer("Fern Pollin")
                 .build());
 
@@ -49,7 +56,7 @@ public class EventController {
                 .location("Meow Town")
                 .date("January 28, 2022")
                 .time("12:00")
-                .petsAllowed(true)
+                .petAllowed(true)
                 .organizer("Kat Laydee")
                 .build());
 
@@ -61,7 +68,7 @@ public class EventController {
                 .location("Flora City")
                 .date("March 14, 2022")
                 .time("10:00")
-                .petsAllowed(true)
+                .petAllowed(true)
                 .organizer("Fern Pollin")
                 .build());
 
@@ -73,7 +80,7 @@ public class EventController {
                 .location("Playa Del Carmen")
                 .date("July 22, 2022")
                 .time("11:00")
-                .petsAllowed(false)
+                .petAllowed(false)
                 .organizer("Carey Wales")
                 .build());
 
@@ -85,7 +92,7 @@ public class EventController {
                 .location("Phuket")
                 .date("July 12, 2022")
                 .time("15:00")
-                .petsAllowed(false)
+                .petAllowed(false)
                 .organizer("Ned")
                 .build());
 
@@ -97,7 +104,7 @@ public class EventController {
                 .location("Tin City")
                 .date("September 14, 2022")
                 .time("3:00")
-                .petsAllowed(true)
+                .petAllowed(true)
                 .organizer("Kahn Opiner")
                 .build());
 
@@ -109,7 +116,7 @@ public class EventController {
                 .location("Highway 50")
                 .date("July 22, 2022")
                 .time("11:00")
-                .petsAllowed(false)
+                .petAllowed(false)
                 .organizer("Brody Kill")
                 .build());
     }
