@@ -13,27 +13,10 @@ import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Controller
 public class EventController {
 
     List<Event> eventList;
-
-    @GetMapping("events/{id}")
-    public ResponseEntity<?> getEvent(@PathVariable("id") Long id) {
-        Event output = null;
-        for (Event event : eventList) {
-            if (event.getId().equals(id)) {
-                output = event;
-                break;
-            }
-        }
-        if (output != null) {
-            return ResponseEntity.ok(output);
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The given id is not found");
-        }
-    }
 
     @GetMapping("events")
     public ResponseEntity<?> getEventLists(
@@ -53,6 +36,23 @@ public class EventController {
             return ResponseEntity.ok(output);  // Return the events found up to the exception
         }
     }
+
+    @GetMapping("events/{id}")
+    public ResponseEntity<?> getEvent(@PathVariable("id") Long id) {
+        Event output = null;
+        for (Event event : eventList) {
+            if (event.getId().equals(id)) {
+                output = event;
+                break;
+            }
+        }
+        if (output != null) {
+            return ResponseEntity.ok(output);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The given id is not found");
+        }
+    }
+
     @PostConstruct
     public void init() {
         eventList = new ArrayList<>();
