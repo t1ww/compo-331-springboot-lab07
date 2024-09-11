@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import se331.lab.rest.entity.Event;
-import se331.lab.rest.repository.EventRepository;
 
 import java.util.ArrayList;
 import java.util.List;
