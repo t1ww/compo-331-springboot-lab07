@@ -4,12 +4,16 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import se331.lab.rest.entity.Event;
+import se331.lab.rest.repository.EventRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class EventDaoImpl implements EventDao {
+    final EventRepository eventRepository;
+
     List<Event> eventList;
 
     @PostConstruct
@@ -24,7 +28,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Meow Town")
                 .date("January 28, 2022")
                 .time("12:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Kat Laydee")
                 .build());
 
@@ -36,7 +40,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Flora City")
                 .date("March 14, 2022")
                 .time("10:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Fern Pollin")
                 .build());
 
@@ -49,7 +53,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Meow Town")
                 .date("January 28, 2022")
                 .time("12:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Kat Laydee")
                 .build());
 
@@ -61,7 +65,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Flora City")
                 .date("March 14, 2022")
                 .time("10:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Fern Pollin")
                 .build());
 
@@ -73,7 +77,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Playa Del Carmen")
                 .date("July 22, 2022")
                 .time("11:00")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Carey Wales")
                 .build());
 
@@ -85,7 +89,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Phuket")
                 .date("July 12, 2022")
                 .time("15:00")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Ned")
                 .build());
 
@@ -97,7 +101,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Tin City")
                 .date("September 14, 2022")
                 .time("3:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Kahn Opiner")
                 .build());
 
@@ -109,7 +113,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Highway 50")
                 .date("July 22, 2022")
                 .time("11:00")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Brody Kill")
                 .build());
     }
