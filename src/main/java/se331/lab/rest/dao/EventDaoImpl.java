@@ -12,8 +12,6 @@ import java.util.List;
 @Repository
 @RequiredArgsConstructor
 public class EventDaoImpl implements EventDao {
-    final EventRepository eventRepository;
-
     List<Event> eventList;
 
     @PostConstruct
