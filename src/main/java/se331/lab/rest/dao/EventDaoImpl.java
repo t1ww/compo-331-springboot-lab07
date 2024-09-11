@@ -1,6 +1,7 @@
 package se331.lab.rest.dao;
 
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import se331.lab.rest.entity.Event;
 
