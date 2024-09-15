@@ -10,7 +10,7 @@ import se331.lab.rest.repository.OrganizerRepository;
 
 @Repository
 @RequiredArgsConstructor
-@Profile("db")
+@Profile("db-event")
 public class OrganizerDaoDbImpl implements OrganizerDao {
     final OrganizerRepository OrganizerRepository;
 

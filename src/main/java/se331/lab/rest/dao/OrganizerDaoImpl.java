@@ -7,14 +7,13 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 import se331.lab.rest.entity.Organizer;
-import se331.lab.rest.entity.Organizer;
 
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Profile("manual")
+@Profile("manual-organizer")
 @RequiredArgsConstructor
 public class OrganizerDaoImpl implements OrganizerDao {
     List<Organizer> organizerList;

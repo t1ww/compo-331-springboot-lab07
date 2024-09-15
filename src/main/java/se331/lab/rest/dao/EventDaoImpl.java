@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Profile("manual")
+@Profile("manual-event")
 @RequiredArgsConstructor
 public class EventDaoImpl implements EventDao {
     List<Event> eventList;
