@@ -11,15 +11,13 @@ import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.service.OrganizerService;
 
-import java.util.List;
-
 @Controller
 @RequiredArgsConstructor
 public class OrganizerController {
 
-    final OrganizerService OrganizerService;
+    final OrganizerService organizerService;
 
-    @GetMapping("Organizers")
+    @GetMapping("organizers")
     public ResponseEntity<?> getOrganizerLists(
             @RequestParam(value = "_limit", required = false) Integer perPage,
             @RequestParam(value = "_page", required = false) Integer page) {
@@ -27,16 +25,16 @@ public class OrganizerController {
             page = 1;
         }
         // set page output and response
-        Page<Organizer> pageOutput = OrganizerService.getOrganizers(perPage, page);
+        Page<Organizer> pageOutput = organizerService.getOrganizers(perPage, page);
         HttpHeaders responseHeader = new HttpHeaders();
         responseHeader.set("x-total-count", String.valueOf(pageOutput.getTotalElements()));
         return new ResponseEntity<>(pageOutput.getContent(), responseHeader, HttpStatus.OK);
     }
 
-    @GetMapping("Organizers/{id}")
+    @GetMapping("organizers/{id}")
     public ResponseEntity<?> getOrganizer(@PathVariable("id") Long id) {
         // Fetching a single Organizer by id using the service
-        Organizer output = OrganizerService.getOrganizerById(id);
+        Organizer output = organizerService.getOrganizerById(id);
         if (output != null) {
             return ResponseEntity.ok(output);
         } else {
@@ -44,9 +42,9 @@ public class OrganizerController {
         }
     }
 
-    @PostMapping("/Organizers")
+    @PostMapping("/organizers")
     public ResponseEntity<?> addOrganizer(@RequestBody Organizer Organizer) {
-        Organizer output = OrganizerService.saveOrganizer(Organizer);
+        Organizer output = organizerService.saveOrganizer(Organizer);
         return ResponseEntity.ok(output);
     }
 }
