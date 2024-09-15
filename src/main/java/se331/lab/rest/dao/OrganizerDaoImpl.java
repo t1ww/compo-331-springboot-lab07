@@ -1,6 +1,10 @@
 package se331.lab.rest.dao;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
+import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.entity.Organizer;
 
 import jakarta.annotation.PostConstruct;
@@ -26,8 +30,6 @@ public class OrganizerDaoImpl implements OrganizerDao {
                 .organizationName("Community Gardeners")
                 .address("456 Flora City")
                 .build());
-
-        // Add more organizers as needed
     }
 
     @Override
@@ -36,18 +38,25 @@ public class OrganizerDaoImpl implements OrganizerDao {
     }
 
     @Override
-    public List<Organizer> getOrganizers(Integer pageSize, Integer page) {
+    public Page<Organizer> getOrganizers(Integer pageSize, Integer page) {
         pageSize = pageSize == null ? organizerList.size() : pageSize;
         page = page == null ? 1 : page;
         int firstIndex = (page - 1) * pageSize;
-        return organizerList.subList(firstIndex, Math.min(firstIndex + pageSize, organizerList.size()));
+        return new PageImpl<>(organizerList.subList(firstIndex, firstIndex + pageSize), PageRequest.of(page, pageSize), organizerList.size());
     }
 
     @Override
-    public Organizer getOrganizer(Long id) {
+    public Organizer getOrganizerById(Long id) {
         return organizerList.stream()
                 .filter(organizer -> organizer.getId().equals(id))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public Organizer saveOrganizer(Organizer organizer) {
+        organizer.setId(organizerList.get(organizerList.size() - 1).getId() + 1);
+        organizerList.add(organizer);
+        return organizer;
     }
 }
