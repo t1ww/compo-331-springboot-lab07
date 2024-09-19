@@ -1,7 +1,7 @@
 spring:
   profiles:
     active:
-      - db
+      - db-event
   application:
     name: 331-backend
   datasource:
