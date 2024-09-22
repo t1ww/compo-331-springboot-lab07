@@ -1,5 +1,6 @@
 package se331.lab.rest.config;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -15,6 +16,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     final EventRepository eventRepository;
     final OrganizerRepository organizerRepository;
     @Override
+    @Transactional
     public void onApplicationEvent(ApplicationReadyEvent event) {
         Organizer org1, org2, org3;
         org1 = organizerRepository.save(Organizer.builder().name("CAMT").build());
