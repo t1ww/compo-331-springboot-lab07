@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import java.util.List;
 
@@ -24,6 +26,8 @@ public class Event {
     String date;
     String time;
     Boolean petsAllowed;
+    @ManyToOne
     Organizer organizer;
+    @ManyToMany(mappedBy = "eventHistory")
     List<Participant> Participant;
 }
