@@ -11,8 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.service.EventService;
 
-import java.util.List;
-
 @Controller
 @RequiredArgsConstructor
 public class EventController {
@@ -23,7 +21,7 @@ public class EventController {
     public ResponseEntity<?> getEventLists(
             @RequestParam(value = "_limit", required = false) Integer perPage,
             @RequestParam(value = "_page", required = false) Integer page) {
-        if(page == null){ // temp fix, idk
+        if (page == null) { // temp fix, idk
             page = 1;
         }
         // set page output and response
