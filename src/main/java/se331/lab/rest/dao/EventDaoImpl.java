@@ -131,12 +131,12 @@ public class EventDaoImpl implements EventDao {
                 .orElse(null);
     }
 
-    @Override
-    public Event saveEvent(Event event) {
-        event.setId(eventList.get(eventList.size() - 1).getId() + 1);
-        eventList.add(event);
-        return event;
-    }
+        @Override
+        public Event saveEvent(Event event) {
+            event.setId(eventList.get(eventList.size() - 1).getId() + 1);
+            eventList.add(event);
+            return event;
+        }
 
 
 }
