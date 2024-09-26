@@ -53,7 +53,7 @@ public class EventController {
 
     @PostMapping("/events")
     public ResponseEntity<?> addEvent(@RequestBody Event event) {
-        Event output = eventService.save(event);
+        Event output = eventService.saveEvent(event);
         return ResponseEntity.ok(LabMapper.INSTANCE.getEventDTO(output));
     }
 }
