@@ -26,7 +26,7 @@ public class ParticipantController {
 
         // Convert the list of participants to DTOs
         List<ParticipantDTO> participantDTOs = participants.stream()
-                .map(LabMapper.INSTANCE::toParticipantDTO)
+                .map(LabMapper.INSTANCE::getParticipantDTO)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(participantDTOs);  // Return the DTOs

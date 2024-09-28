@@ -82,7 +82,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                         .build()
         );
         // Assign participants to the event
-        tempEvent.setParticipant(List.of(p1, p2, p3));
+        tempEvent.setParticipants(List.of(p1, p2, p3));
         p1.getEventHistory().add(tempEvent);
         p2.getEventHistory().add(tempEvent);
         p3.getEventHistory().add(tempEvent);
@@ -103,7 +103,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                         .build()
         );
         // Assign participants to the event
-        tempEvent.setParticipant(List.of(p2, p4, p5));
+        tempEvent.setParticipants(List.of(p2, p4, p5));
         p2.getEventHistory().add(tempEvent);
         p4.getEventHistory().add(tempEvent);
         p5.getEventHistory().add(tempEvent);
@@ -124,7 +124,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                         .build()
         );
         // Assign participants to the event
-        tempEvent.setParticipant(List.of(p1, p3, p5));
+        tempEvent.setParticipants(List.of(p1, p3, p5));
         p1.getEventHistory().add(tempEvent);
         p3.getEventHistory().add(tempEvent);
         p5.getEventHistory().add(tempEvent);
@@ -145,7 +145,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                         .build()
         );
         // Assign participants to the event
-        tempEvent.setParticipant(List.of(p3, p4, p5));
+        tempEvent.setParticipants(List.of(p3, p4, p5));
         p3.getEventHistory().add(tempEvent);
         p4.getEventHistory().add(tempEvent);
         p5.getEventHistory().add(tempEvent);

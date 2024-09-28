@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventDTO {
+public class ParticipantEventHistoryDTO {
     Long id;
     String category;
     String title;
@@ -19,6 +20,5 @@ public class EventDTO {
     String date;
     String time;
     Boolean petsAllowed;
-    EventOrganizerDTO organizer;
-    List<EventParticipantDTO> participants; // Change this to a List
+    List<EventParticipantDTO> participants;  // Ensure this is EventParticipantDTO
 }
