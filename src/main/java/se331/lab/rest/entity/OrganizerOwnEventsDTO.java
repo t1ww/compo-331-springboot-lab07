@@ -9,8 +9,8 @@ import java.util.List;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class OrganizerOwnEventsDTO {
     Long id;
     String category;
@@ -19,6 +19,6 @@ public class OrganizerOwnEventsDTO {
     String location;
     String date;
     String time;
-    Boolean petsAllowed;
+    Boolean perAllowed;
     List<Participant> participants;
 }
