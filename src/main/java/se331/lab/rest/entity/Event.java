@@ -31,5 +31,5 @@ public class Event {
     @ManyToOne
     Organizer organizer;
     @ManyToMany(mappedBy = "eventHistory")
-    List<Participant> Participants;
+    List<Participant> participants;
 }
