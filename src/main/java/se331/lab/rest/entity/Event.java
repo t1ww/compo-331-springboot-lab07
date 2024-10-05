@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
+import se331.lab.rest.entity.Organizer;
+
 import java.util.List;
 
 @Data

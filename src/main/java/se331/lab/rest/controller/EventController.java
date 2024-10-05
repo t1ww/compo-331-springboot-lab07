@@ -10,11 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.entity.Event;
-import jakarta.annotation.PostConstruct;
-import se331.lab.rest.service.EventService;
+
+import se331.lab.rest.service.interfaces.EventService;
 import se331.lab.rest.util.LabMapper;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -36,6 +34,8 @@ public class EventController {
             pageOutput = eventService.getEvents(title, PageRequest.of(page-1, perPage));
         }
 
+
+        
         HttpHeaders responseHeader = new HttpHeaders();
         responseHeader.set("X-Total-Count", String.valueOf(pageOutput.getTotalElements()));
 
@@ -47,7 +47,7 @@ public class EventController {
     @GetMapping("events/{id}")
     public ResponseEntity<?> getEvent(@PathVariable("id") Long id) {
         // Fetching a single event by id using the service
-        Event output = eventService.getEvent(id);
+        Event output = eventService.getEventById(id);
         if (output != null) {
             return ResponseEntity.ok(LabMapper.INSTANCE.getEventDTO(output));
         } else {

@@ -1,4 +1,4 @@
-package se331.lab.rest.entity;
+package se331.lab.rest.DTO.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -5,8 +5,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import se331.lab.rest.dao.ParticipantDao;
+import se331.lab.rest.dao.interfaces.ParticipantDao;
 import se331.lab.rest.entity.Participant;
+import se331.lab.rest.service.interfaces.ParticipantService;
 
 import java.util.List;
 

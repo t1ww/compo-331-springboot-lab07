@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se331.lab.rest.entity.Participant;
-import se331.lab.rest.entity.ParticipantDTO;  // Import the ParticipantDTO
-import se331.lab.rest.service.ParticipantService;
+import se331.lab.rest.DTO.events.ParticipantDTO;  // Import the ParticipantDTO
+import se331.lab.rest.service.interfaces.ParticipantService;
 import se331.lab.rest.util.LabMapper;
 
 import java.util.List;
