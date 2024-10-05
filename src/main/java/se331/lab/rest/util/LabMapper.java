@@ -22,4 +22,7 @@ public interface LabMapper {
     // Add mappings for EventParticipantDTO
     EventParticipantDTO getEventParticipantDTO(Participant participant);
     List<EventParticipantDTO> getEventParticipantDTO(List<Participant> participants);
+
+    AuctionItemDTO getAuctionItemDTO(AuctionItem auctionItem);
+    List<AuctionItemDTO> getAuctionItemDTO(List<AuctionItem> auctionItems);
 }

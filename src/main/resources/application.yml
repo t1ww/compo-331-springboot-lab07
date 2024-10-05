@@ -1,7 +1,7 @@
 spring:
   profiles:
     active:
-      - manual
+      - db
   application:
     name: 331-backend
   datasource:
@@ -14,4 +14,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop

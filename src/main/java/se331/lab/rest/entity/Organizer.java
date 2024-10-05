@@ -1,4 +1,6 @@
 package se331.lab.rest.entity;
+
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -6,15 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Entity
 @Builder
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Organizer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Exclude
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
+            @EqualsAndHashCode.Exclude
     Long id;
     String name;
     @OneToMany(mappedBy = "organizer")

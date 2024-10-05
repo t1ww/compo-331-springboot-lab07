@@ -5,15 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrganizerDTO {
-    Long id;
-    String name;
-    List<OrganizerOwnEventsDTO> ownEvents = new ArrayList<>();
+public class AuctionItemDTO {
+    private Long id;
+    private String name;
+    private String description;
+    private boolean successfulBid;
+    private List<BidDTO> bids; // Include a list of BidDTOs if needed
 }
