@@ -1,4 +1,4 @@
-package se331.lab.rest.dao;
+package se331.lab.rest.service.interfaces;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -6,14 +6,12 @@ import se331.lab.rest.entity.Auction;
 
 import java.util.List;
 
-public interface AuctionDao {
-    List<Auction> getAllAuctions();
+public interface AuctionService {
+    List<Auction> getAllAuctions(); // Keep this for non-paged access
+    Page<Auction> getAllAuctions(Integer pageSize, Integer page);
     Auction getAuctionById(Long id);
-
-    // New methods for querying by title and description
     Page<Auction> getAuctionsByTitle(String title, Pageable page);
     Page<Auction> getAuctionsByDescription(String description, Pageable page);
-
-    // Alternatively, a combined method if you need more flexibility
     Page<Auction> getAuctionsByTitleOrDescription(String title, String description, Pageable page);
+    Auction saveAuction(Auction auction);
 }

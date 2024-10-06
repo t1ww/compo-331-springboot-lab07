@@ -5,12 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import se331.lab.rest.dao.EventDao;
-import se331.lab.rest.dao.OrganizerDao;
+import se331.lab.rest.dao.interfaces.EventDao;
+import se331.lab.rest.dao.interfaces.OrganizerDao;
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.entity.Organizer;
-
-import java.util.List;
+import se331.lab.rest.service.interfaces.EventService;
 
 @Service
 @RequiredArgsConstructor

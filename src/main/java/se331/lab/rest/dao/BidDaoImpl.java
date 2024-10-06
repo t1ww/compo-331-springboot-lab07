@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+import se331.lab.rest.dao.interfaces.BidDao;
 import se331.lab.rest.entity.Bid;
 import se331.lab.rest.repository.BidRepository;
 

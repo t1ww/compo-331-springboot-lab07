@@ -1,16 +1,14 @@
-package se331.lab.rest.entity;
+package se331.lab.rest.DTO.auctions;
 
 
 import lombok.Builder;
 import lombok.Data;
-import java.util.List;
 
 @Data
 @Builder
-public class AuctionDTO {
+public class BidToAuctionDTO {
     Long id;
     String title;
     String description;
     String type;
-    List<AuctionBidDTO> bids;
 }

@@ -2,9 +2,8 @@ package se331.lab.rest.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import se331.lab.rest.entity.Organizer;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -16,7 +15,7 @@ public class Bid {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
     Long id;
-    String amount;
+    BigDecimal amount;
     String dateTime;
     @ManyToOne
     Auction auction;

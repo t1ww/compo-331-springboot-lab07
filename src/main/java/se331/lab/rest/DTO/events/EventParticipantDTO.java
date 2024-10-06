@@ -1,5 +1,4 @@
-package se331.lab.rest.entity;
-
+package se331.lab.rest.DTO.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventOrganizerDTO {
+public class EventParticipantDTO {
     Long id;
     String name;
 }

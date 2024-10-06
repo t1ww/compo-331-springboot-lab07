@@ -1,10 +1,8 @@
-package se331.lab.rest.service;
+package se331.lab.rest.service.interfaces;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import se331.lab.rest.entity.Event;
-
-import java.util.List;
 
 public interface EventService {
     Integer getEventSize();

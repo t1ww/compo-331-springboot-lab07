@@ -1,11 +1,9 @@
-package se331.lab.rest.entity;
+package se331.lab.rest.DTO.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Data
 @Builder

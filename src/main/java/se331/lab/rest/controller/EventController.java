@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.entity.Event;
 
-import se331.lab.rest.service.EventService;
+import se331.lab.rest.service.interfaces.EventService;
 import se331.lab.rest.util.LabMapper;
 
 @Controller

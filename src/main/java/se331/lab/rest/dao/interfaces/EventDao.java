@@ -1,4 +1,4 @@
-package se331.lab.rest.dao;
+package se331.lab.rest.dao.interfaces;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

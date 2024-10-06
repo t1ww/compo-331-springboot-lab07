@@ -7,10 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+import se331.lab.rest.dao.interfaces.EventDao;
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.repository.EventRepository;
-
-import java.util.List;
 
 @Repository
 @Primary
