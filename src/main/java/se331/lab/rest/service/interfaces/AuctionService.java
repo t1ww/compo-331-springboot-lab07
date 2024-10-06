@@ -13,5 +13,9 @@ public interface AuctionService {
     Page<Auction> getAuctionsByTitle(String title, Pageable page);
     Page<Auction> getAuctionsByDescription(String description, Pageable page);
     Page<Auction> getAuctionsByTitleOrDescription(String title, String description, Pageable page);
+
+    // New method for searching by type
+    Page<Auction> getAuctionsByType(String type, Pageable page);
+
     Auction saveAuction(Auction auction);
 }

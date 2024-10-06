@@ -7,7 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import se331.lab.rest.dao.interfaces.AuctionDao;
 import se331.lab.rest.entity.Auction;
-import se331.lab.rest.entity.Organizer;
 import se331.lab.rest.service.interfaces.AuctionService;
 
 import java.util.List;
@@ -49,7 +48,12 @@ public class AuctionServiceImpl implements AuctionService {
     }
 
     @Override
-    public Auction saveAuction(Auction auction){
+    public Page<Auction> getAuctionsByType(String type, Pageable page) {
+        return auctionDao.getAuctionsByType(type, page); // Implemented in DAO
+    }
+
+    @Override
+    public Auction saveAuction(Auction auction) {
         return auctionDao.saveAuction(auction);
     }
 }

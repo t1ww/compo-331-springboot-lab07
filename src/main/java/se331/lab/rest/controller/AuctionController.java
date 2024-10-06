@@ -22,23 +22,41 @@ public class AuctionController {
     public ResponseEntity<?> getAuctionLists(
             @RequestParam(value = "_limit", required = false) Integer perPage,
             @RequestParam(value = "_page", required = false) Integer page,
-            @RequestParam(value = "title", required = false) String title) {
+            @RequestParam(value = "title", required = false) String title,
+            @RequestParam(value = "description", required = false) String description,
+            @RequestParam(value = "type", required = false) String type) {
 
-        perPage = perPage == null ? 1 : perPage;
-        page = page == null ? 1 : page;
+        // Set default values for pagination
+        perPage = (perPage == null || perPage <= 0) ? 10 : perPage; // Change to a reasonable default
+        page = (page == null || page <= 0) ? 1 : page;
 
         Page<Auction> pageOutput;
-        if (title == null) {
-            pageOutput = auctionService.getAllAuctions(perPage, page);
-        } else {
+
+        // Check for search conditions and retrieve auctions accordingly
+        // Check for search conditions and retrieve auctions accordingly
+        if (title != null) {
+            // Fetch auctions by title if it's provided
             pageOutput = auctionService.getAuctionsByTitle(title, PageRequest.of(page - 1, perPage));
+        } else if (description != null) {
+            // Fetch auctions by description if it's provided
+            pageOutput = auctionService.getAuctionsByDescription(description, PageRequest.of(page - 1, perPage));
+        } else if (type != null) {
+            // Fetch auctions by type if it's provided
+            pageOutput = auctionService.getAuctionsByType(type, PageRequest.of(page - 1, perPage));
+        } else {
+            // Fetch all auctions if no filters are applied
+            pageOutput = auctionService.getAllAuctions(perPage, page);
         }
 
+
+        // Set the response header for total count
         HttpHeaders responseHeader = new HttpHeaders();
         responseHeader.set("X-Total-Count", String.valueOf(pageOutput.getTotalElements()));
 
         return new ResponseEntity<>(LabMapper.INSTANCE.getAuctionDTO(pageOutput.getContent()), responseHeader, HttpStatus.OK);
     }
+
+
 
     @GetMapping("/auctions/{id}")
     public ResponseEntity<?> getAuction(@PathVariable("id") Long id) {
