@@ -153,7 +153,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         // Assign organizer
         tempEvent.setOrganizer(org3);
         org3.getOwnEvents().add(tempEvent);
+        //
 
+        // AUCTIONS
         AuctionItem item1 = new AuctionItem();
         item1.setName("Vintage Vase");
         item1.setDescription("A beautiful vintage vase from the 19th century.");
