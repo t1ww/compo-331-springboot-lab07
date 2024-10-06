@@ -17,6 +17,7 @@ public class Bid {
     Long id;
     BigDecimal amount;
     String dateTime;
+    Boolean successful = false;
     @ManyToOne
     Auction auction;
 }

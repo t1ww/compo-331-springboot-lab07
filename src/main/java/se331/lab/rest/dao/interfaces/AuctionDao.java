@@ -14,7 +14,12 @@ public interface AuctionDao {
     // for querying
     Page<Auction> getAuctionsByTitle(String title, Pageable page);
     Page<Auction> getAuctionsByDescription(String description, Pageable page);
+
+    Page<Auction> getAuctionsByType(String type, Pageable page);
+
     Page<Auction> getAuctionsByTitleOrDescription(String title, String description, Pageable page);
+
+    Page<Auction> getAuctionsByTitleOrType(String title, String type, Pageable page);
 
     // saving
     Auction saveAuction(Auction auction);

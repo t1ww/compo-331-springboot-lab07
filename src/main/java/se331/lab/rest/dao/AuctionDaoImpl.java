@@ -43,8 +43,18 @@ public class AuctionDaoImpl implements AuctionDao {
     }
 
     @Override
+    public Page<Auction> getAuctionsByType(String type, Pageable page) { // New method to filter by type
+        return auctionRepository.findByTypeContainingIgnoreCase(type, page);
+    }
+
+    @Override
     public Page<Auction> getAuctionsByTitleOrDescription(String title, String description, Pageable page) {
         return auctionRepository.findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(title, description, page);
+    }
+
+    @Override
+    public Page<Auction> getAuctionsByTitleOrType(String title, String type, Pageable page) { // New method to filter by title or type
+        return auctionRepository.findByTitleContainingIgnoreCaseOrTypeContainingIgnoreCase(title, type, page);
     }
 
     @Override
