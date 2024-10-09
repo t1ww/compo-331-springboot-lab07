@@ -1,9 +1,9 @@
 spring:
-  profiles:
-    active:
-      - db
   application:
     name: 331-backend
+  profiles:
+    active:
+      - manual
   datasource:
     url: jdbc:mysql://localhost:3306/selabdb?createDatabaseIfNotExist=true&autoReconnect=true&characterEncoding=UTF-8&allowMultiQueries=true&allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,7 +14,14 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
   servlet:
     multipart:
-      max-request-size: 10MB
+      max-file-size: 10MB
+application:
+  security:
+    jwt:
+      secret-key: 0a3629c99609ea27f0eb62cb6421fd2e5a54b3b20ad0c70ec91fbdebdad45bf92f4484842a4cd5d51f0d91998245c7b3d38c230cdc0c94d8a09bfe098745e647fa80a55a12746cb29b208aa190fac00690320f01909947bbb8dd0fe74a69893bc2a75b63016488884bd87f3612e321f0f16411298abd18b444497caba7931c5b021beb40672ad0a4e48f37cfb290ad153df66619e752168b428aee082682ba5eeba0b41112b40f19b803fdecf6f8642aee4efdd873d312a5d54577e731cbbe18a970c5e2a4d51057a480de0fb56efedc105b11c5d10f2324b3896608ac16d70486e69e3916ec39444533802f8c8f764755f3c6095c8c29af06ebfba7b9d665a222f9bbcdf158376c9449478d87406ede493fadca439f9c6a55eddd4e28483360275e1cd44ad0f30abeb47de3bae18279259b301093b077adc8c8e4d2c9c21576eaad75e5617375d9c1b148583eeb75811ec653f0c77223bcbccfa87237b5536afefc70fb168456ccdcf300ea0c5c987680d2d1abdb8699f7c10d50e8932fbcb6347445dc5725fadd7505a4a015013fb02e7e8c800d281a0ba0211b7290d0f243754d181dc0127561beb289cf624c978d2c1f3b496e7272da07569a444933f9f6439a73d9fb6704953f0fc85b1de9a16a049a4c934ce082d2ab30466b3e67246c939995d034d6184292473bbd8f46937277ae0117217f954ab1926eae1d04a6ac
+      expiration: 86400000  # 86400000 ms = 1 day
+      refresh-token:
+        expiration: 604800000  # 604800000 ms = 7 days
