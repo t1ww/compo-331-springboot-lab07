@@ -1,13 +1,12 @@
 package se331.lab.rest.util;
 
+import org.aspectj.weaver.ast.Or;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 import se331.lab.rest.DTO.auctions.AuctionDTO;
 import se331.lab.rest.DTO.auctions.BidDTO;
-import se331.lab.rest.DTO.events.EventDTO;
-import se331.lab.rest.DTO.events.EventParticipantDTO;
-import se331.lab.rest.DTO.events.OrganizerDTO;
-import se331.lab.rest.DTO.events.ParticipantDTO;
+import se331.lab.rest.DTO.events.*;
 import se331.lab.rest.entity.*;
 import se331.lab.rest.user.User;
 
@@ -36,4 +35,7 @@ public interface LabMapper {
     List<BidDTO> getBidDTO(List<Bid> bids);
 
     OrganizerDTO getOrganizerDTO(User user);
+
+    @Mapping(target = "roles", source = "user.roles")
+    OrganizerAuthDTO getOrganizerAuthDTO(Organizer organizer);
 }

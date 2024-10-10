@@ -270,9 +270,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .enabled(true)
                 .build();
 
-        user1.getRoles().add(Role.ROLE_USER);
         user1.getRoles().add(Role.ROLE_ADMIN);
-
         user2.getRoles().add(Role.ROLE_USER);
         user3.getRoles().add(Role.ROLE_USER);
         userRepository.save(user1);
