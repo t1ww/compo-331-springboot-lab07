@@ -11,6 +11,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import se331.lab.rest.util.LabMapper;
 import se331.lab.security.config.JwtService;
 import se331.lab.security.token.Token;
 import se331.lab.security.token.TokenRepository;
@@ -66,7 +68,7 @@ public class AuthenticationService {
     return AuthenticationResponse.builder()
             .accessToken(jwtToken)
             .refreshToken(refreshToken)
-            .user(user.getOrganizer())
+            .user(LabMapper.INSTANCE.getOrganizerDTO(user.getOrganizer()))
             .build();
   }
 
