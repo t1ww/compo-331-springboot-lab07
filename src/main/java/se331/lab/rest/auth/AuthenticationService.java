@@ -13,13 +13,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import se331.lab.rest.util.LabMapper;
-import se331.lab.security.config.JwtService;
-import se331.lab.security.token.Token;
-import se331.lab.security.token.TokenRepository;
-import se331.lab.security.token.TokenType;
-import se331.lab.security.user.Role;
-import se331.lab.security.user.User;
-import se331.lab.security.user.UserRepository;
+import se331.lab.rest.config.JwtService;
+import se331.lab.rest.token.Token;
+import se331.lab.rest.token.TokenRepository;
+import se331.lab.rest.token.TokenType;
+import se331.lab.rest.user.Role;
+import se331.lab.rest.user.User;
+import se331.lab.rest.user.UserRepository;
 
 import java.io.IOException;
 import java.util.List;

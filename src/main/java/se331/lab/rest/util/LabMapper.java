@@ -9,6 +9,7 @@ import se331.lab.rest.DTO.events.EventParticipantDTO;
 import se331.lab.rest.DTO.events.OrganizerDTO;
 import se331.lab.rest.DTO.events.ParticipantDTO;
 import se331.lab.rest.entity.*;
+import se331.lab.rest.user.User;
 
 import java.util.List;
 
@@ -33,4 +34,6 @@ public interface LabMapper {
 
     BidDTO getBidDTO(Bid bid);
     List<BidDTO> getBidDTO(List<Bid> bids);
+
+    OrganizerDTO getOrganizerDTO(User user);
 }

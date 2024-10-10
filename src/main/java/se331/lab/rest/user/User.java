@@ -12,7 +12,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import se331.lab.rest.entity.Organizer;
-import se331.lab.security.token.Token;
+import se331.lab.rest.token.Token;
 
 import java.util.ArrayList;
 import java.util.Collection;
