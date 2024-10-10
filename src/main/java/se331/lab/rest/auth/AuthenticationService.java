@@ -56,7 +56,7 @@ public class AuthenticationService {
                     request.getPassword()
             )
     );
-    User user = repository.findByUsername(request.getUsername())
+    se331.lab.rest.user.User user = repository.findByUsername(request.getUsername())
             .orElseThrow();
 
     String jwtToken = jwtService.generateToken(user);
@@ -66,6 +66,7 @@ public class AuthenticationService {
     return AuthenticationResponse.builder()
             .accessToken(jwtToken)
             .refreshToken(refreshToken)
+            .user(user.getOrganizer())
             .build();
   }
 
